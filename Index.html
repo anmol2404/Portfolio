@@ -8,6 +8,9 @@
         <meta name="keywords" content="Anmol Sharma, .NET Software Engineer, C#, VB.NET, SQL Server, ASP.NET, portfolio, software development, full-stack development">
         <meta name="author" content="Anmol Sharma">
         <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
     <body>
         
@@ -35,15 +38,38 @@
             </div>
             
             <header id="header">
-                <nav role="navigation">
-                    <ul>
+                <!-- <nav role="navigation">
+
+                    <Button id="toggleMenu"><span style="font-weight: 50px;">&#9776;</span></Button>
+
+                    <ul id="nav-menu" class="dropdown-menu">
                         <li><a href="#mainsection">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#about">Skills</a></li>
                         <li><a href="#Project">Projects</a></li>
                         <li><a href="#contactform">Contact</a></li>
                     </ul>
-                </nav>
+                </nav> -->
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                      <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>                        
+                        </button>
+                      </div>
+                      <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#mainsection">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#about">Skills</a></li>
+                            <li><a href="#Project">Projects</a></li>
+                            <li><a href="#contactform">Contact</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
             </header> 
 
             <section id="about">
@@ -128,5 +154,14 @@
             <p>&copy; 2025</p>
         </footer>
         <script src="main.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(".navbar-nav li a").click(function(event) {
+                    if (!$(this).parent().hasClass('dropdown')) {
+                        $(".navbar-collapse").collapse('hide');
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
